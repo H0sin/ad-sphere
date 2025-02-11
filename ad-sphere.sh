@@ -18,7 +18,6 @@ echo "Cloning the project from the Git repository..."
 git clone https://github.com/H0sin/ad-sphere.git
 
 # Change to the project directory (assuming the project folder is the same as the repo name)
-#PROJECT_DIR=$(basename "$GIT_REPO_URL" .git)
 cd ad-sphere
 
 # Update package list and install necessary packages
@@ -29,9 +28,14 @@ sudo apt-get update -y
 echo "Installing Python 3 and pip..."
 sudo apt-get install -y python3 python3-pip python3-venv
 
+# Create virtual environment and install dependencies
+echo "Setting up virtual environment..."
+python3 -m venv venv
+source venv/bin/activate
+
 # Install dependencies from requirements.txt
 echo "Installing dependencies from requirements.txt..."
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 
 # Check if the .env file exists, and create it if not
 if [ ! -f ".env" ]; then
@@ -69,5 +73,17 @@ prompt_if_missing "TELEGRAM_PHONE_NUMBER" "your_default_phone_number"
 prompt_if_missing "MESSAGE_TO_SEND" "Hello! This is an automated message."
 prompt_if_missing "USER_FILE_PATH" ""
 
+# Add a dynamic 'sphere start' command by creating an alias for ease of use
+echo "Adding sphere start command..."
+
+# Create a dynamic function to start the bot
+echo "
+sphere_start() {
+    echo 'Starting the bot...'
+    python3 main.py
+}
+export -f sphere_start
+" >> ~/.bashrc
+
 # Print the success message
-echo "Installation complete. You can now run the bot using 'python3 main.py'."
+echo "Installation complete. You can now run the bot using 'python3 main.py'. To start the bot with 'sphere start', reload your shell or use 'source ~/.bashrc'."

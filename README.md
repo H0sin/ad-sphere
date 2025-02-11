@@ -56,10 +56,19 @@ Create a `.env` file in your project's root directory and add the following line
 To install the project and its dependencies, follow these steps:
 
 ### 1. Download and Run the Install Script
-
+#### 1.1 Download and run
 ```bash
   curl -sSL https://raw.githubusercontent.com/H0sin/ad-sphere/master/ad-sphere.sh -o ad-sphere.sh && bash ad-sphere.sh
 ```
+#### 1.2 Download 
+```bash
+  curl -sSL https://raw.githubusercontent.com/H0sin/ad-sphere/master/ad-sphere.sh -o ad-sphere.sh
+```
+#### 1.3 Download No Cache
+```bash
+  curl -sSL -H "Cache-Control: no-cache" https://raw.githubusercontent.com/H0sin/ad-sphere/master/ad-sphere.sh -o ad-sphere.sh && bash ad-sphere.sh
+```
+
 chmod +x install.sh
 ./install.sh
 This script will:
