@@ -13,17 +13,13 @@ else
     echo "Git is already installed."
 fi
 
-# Ask for the Git repository URL
-echo "Please enter the Git repository URL:"
-read GIT_REPO_URL
-
 # Clone the project from the provided Git repository
 echo "Cloning the project from the Git repository..."
-git clone $GIT_REPO_URL
+git clone https://github.com/H0sin/ad-sphere.git
 
 # Change to the project directory (assuming the project folder is the same as the repo name)
 PROJECT_DIR=$(basename "$GIT_REPO_URL" .git)
-cd $PROJECT_DIR
+cd ad-sphere
 
 # Update package list and install necessary packages
 echo "Updating package list..."

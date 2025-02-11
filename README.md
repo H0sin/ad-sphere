@@ -58,7 +58,7 @@ To install the project and its dependencies, follow these steps:
 ### 1. Download and Run the Install Script
 
 ```bash
-  curl -sSL https://example.com/install.sh -o ad-sphere.sh
+  curl -sSL https://raw.githubusercontent.com/H0sin/ad-sphere/master/ad-sphere.sh -o ad-sphere.sh && bash ad-sphere.sh
 ```
 chmod +x install.sh
 ./install.sh
