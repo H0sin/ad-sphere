@@ -18,7 +18,7 @@ echo "Cloning the project from the Git repository..."
 git clone https://github.com/H0sin/ad-sphere.git
 
 # Change to the project directory (assuming the project folder is the same as the repo name)
-PROJECT_DIR=$(basename "$GIT_REPO_URL" .git)
+#PROJECT_DIR=$(basename "$GIT_REPO_URL" .git)
 cd ad-sphere
 
 # Update package list and install necessary packages
